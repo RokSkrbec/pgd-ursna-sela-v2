@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/assets/css/admin.css" />
+    <script src="/public/assets/js/admin.js" defer></script>
+    <title>PGD Uršna sela nadzorna plošča</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Nadzorna plošča</h1>
+      <a href="/"><div class="home-page-link">Glavna stran</div></a>
+    </nav>
+    <main>
+      <section>
+        <h2 class="notifications-title">Obvestila</h2>
+        <div class="notifications-wrapper">
+          <a href="/admin/new-notification"><div class="add-notification-link">Dodaj Obvestilo</div></a>
+          <% notifications.forEach(notification => { %>
+          <div class="notification">
+            <div class="notification-title"><%=notification.title %></div>
+            <div class="notification-date">
+              <%= ` ${notification.date.getDate()}.${notification.date.getMonth()}.${notification.date.getFullYear()} ob
+              ${notification.date.getHours()}:${notification.date.getMinutes()}:${notification.date.getSeconds()}` %>
+            </div>
+            <div class="notification-content"><%= notification.content %></div>
+            <div class="notification-actions-wrapper">
+              <a href="/admin/edit-notification/<%=notification.id %>"><div class="edit-notification-link">Uredi Obvestilo</div></a>
+              <form action="/admin/delete-notification/<%=notification.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="delete-notification-button">Izbriši Obvestilo</button>
+              </form>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <h2 class="posts-title">Novice</h2>
+        <div class="posts-wrapper">
+          <div class="add-post-link"><a href="/admin/new-post">Dodaj Novico</a></div>
+          <% posts.forEach(post => { %>
+          <div class="post">
+            <div class="post-title"><%=post.title %></div>
+            <div class="post-slug"><%=post.slug %></div>
+            <div class="post-date">
+              <%= ` ${post.date.getDate()}.${post.date.getMonth()}.${post.date.getFullYear()} ob ${post.date.getHours()}:${post.date.getMinutes()}:${post.date.getSeconds()}` %>
+            </div>
+            <div class="post-content"><%=post.content.substring(0, 100) %>...</div>
+            <div class="post-actions-wrapper">
+              <a href="/admin/edit-post/<%=post.slug %>"><div class="edit-post-link">Uredi novico</div></a>
+              <form action="/admin/delete-post/<%=post.slug %>?_method=DELETE" method="POST">
+                <button type="submit" class="delete-post-button">Izbriši novico</button>
+              </form>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+    <footer>&copy; PGD Uršna sela</footer>
+  </body>
+</html>
+<script></script>

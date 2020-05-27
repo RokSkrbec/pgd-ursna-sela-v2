@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/assets/css/notifications.css" />
+    <script src="/public/assets/js/notifications.js" defer></script>
+    <title>Uredi obvestilo</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Uredi obvestilo</h1>
+    </nav>
+    <main>
+      <form action="/admin/edit-notification/<%= notification.id %>?_method=PUT" method="POST">
+        <label for="title">Naslov</label>
+        <input type="text" required name="title" value="<%=notification.title %>" />
+        <label for="content">Vsebina</label>
+        <textarea onKeyUp="count_it()" id="text-area" maxlength="100" required type="text" name="content"><%= notification.content %></textarea>
+        <div class="counter-wrapper">
+          <div id="counter"></div>
+          <div>/100</div>
+        </div>
+        <a href="/admin"><div class="cancel">Prekini urejanje</div></a>
+        <button type="submit">Shrani obvestilo</button>
+      </form>
+      <form action="/admin/delete-notification/<%=notification.id %>?_method=DELETE" method="POST">
+        <button type="submit">Izbriši obvestilo</button>
+      </form>
+    </main>
+    <footer>&copy; PGD Uršna sela</footer>
+  </body>
+</html>

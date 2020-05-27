@@ -1,0 +1,181 @@
+@import './_variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  background-color: $backgroundColor;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 0;
+  background-color: $backgroundColor;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $primaryColor;
+  }
+
+  a {
+    text-decoration: none;
+    color: $backgroundColor;
+
+    .home-page-link {
+      padding: 1rem;
+      background-color: $secondaryColor;
+      border-radius: 2px;
+      transition: background-color 0.6s ease-in;
+    }
+
+    .home-page-link:hover {
+      background-color: $terciaryColor;
+    }
+  }
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+
+  section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: $primaryColor;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .notifications-wrapper,
+    .posts-wrapper {
+      a {
+        text-decoration: none;
+        color: $backgroundColor;
+      }
+      .add-notification-link,
+      .add-post-link {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: $secondaryColor;
+        color: $backgroundColor;
+        margin-bottom: 2rem;
+        border-radius: 2px;
+        transition: background-color 0.6s ease-in;
+      }
+
+      .add-notification-link:hover,
+      .add-post-link:hover {
+        background-color: $terciaryColor;
+      }
+
+      .notification,
+      .post {
+        margin-bottom: 2rem;
+        //background-color: darken($backgroundColor, 4);
+        padding: 0.5rem;
+        border-radius: 2px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+
+        .notification-title,
+        .post-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $primaryColor;
+        }
+        .post-slug {
+          font-size: 1rem;
+          color: $secondaryColor;
+          margin-bottom: 0.5rem;
+        }
+        .notification-date,
+        .post-date {
+          font-size: 1rem;
+          color: $secondaryColor;
+          margin-bottom: 0.5rem;
+          margin-top: 0.5rem;
+        }
+        .notification-content,
+        .post-content {
+          font-size: 1.3rem;
+          color: $secondaryColor;
+          margin-bottom: 0.5rem;
+          text-align: justify;
+          box-sizing: border-box;
+        }
+
+        .notification-actions-wrapper,
+        .post-actions-wrapper {
+          display: flex;
+          width: 100%;
+        }
+        .edit-notification-link,
+        .edit-post-link {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background-color: $secondaryColor;
+          margin-right: 1rem;
+          border-radius: 2px;
+          transition: background-color 0.6s ease-in;
+        }
+
+        .edit-notification-link:hover,
+        .edit-post-link:hover {
+          background-color: $terciaryColor;
+        }
+
+        .delete-notification-button,
+        .delete-post-button {
+          background-color: $secondaryColor;
+          color: $backgroundColor;
+          padding: 0.5rem 1rem;
+          font-family: 'Inter', sans-serif;
+          border: none;
+          font-size: 1rem;
+          cursor: pointer;
+          border-radius: 2px;
+          transition: background-color 0.6s ease-in;
+        }
+
+        .delete-notification-button:hover,
+        .delete-post-button:hover {
+          background-color: $terciaryColor;
+        }
+      }
+      .notification:hover,
+      .post:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: $backgroundColor;
+  align-items: center;
+  justify-content: center;
+}

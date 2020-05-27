@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/assets/css/posts.css" />
+    <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
+    <script src="/public/assets/js/posts.js" defer></script>
+    <title>Uredi novico</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Uredi novico</h1>
+    </nav>
+    <main>
+      <form action="/admin/edit-post/<%= post.slug %>?_method=PUT" method="POST">
+        <label for="title">Naslov</label>
+        <input type="text" name="title" required value="<%=post.title %> " /> <br />
+        <label for="content">Vsebina</label>
+        <textarea onKeyUp="count_it()" id="text-area" maxlength="3000" required type="text" name="content"><%= post.content %> </textarea> <br />
+        <div class="counter-wrapper">
+          <div id="counter"></div>
+          <div>/3000</div>
+        </div>
+        <a href="/admin"><div class="cancel">Prekini urejanje</div></a>
+        <button type="submit">Shrani novico</button>
+      </form>
+      <form action="/admin/delete-post/<%=post.slug %>?_method=DELETE" method="POST">
+        <button type="submit">Izbriši novico</button>
+      </form>
+      <%= typeof msg != 'undefined' ? msg : '' %>
+      <form action="/admin/images/<%= post.slug %>" method="POST" enctype="multipart/form-data">
+        <input name="myImage" class="add-image-input" type="file" id="file" />
+        <label for="file">Izberi sliko <i class="fas fa-cloud-upload-alt"></i></label>
+        <div class="file-name">Nobena slika ni izbrana</div>
+        <button type="submit">Dodaj sliko</button>
+      </form>
+      <h2>Galerija</h2>
+      <div class="gallery-wrapper">
+      <% post.images.forEach(image => { %>
+      <div class="image-wrapper">
+        <img src="/public/uploads/<%= image.path%>"></img>
+        <div class="image-text">
+          <%= image.path %>
+          <form action="/admin/delete-image/<%= post.id %>/<%= image.id %>?_method=DELETE" method="POST">
+            <button class=delete-image-button type="submit"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    </main>
+    <footer>&copy; PGD Uršna sela</footer>
+  </body>
+</html>

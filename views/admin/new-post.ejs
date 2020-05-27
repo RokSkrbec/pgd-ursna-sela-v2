@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/assets/css/posts.css" />
+    <script src="/public/assets/js/posts.js" defer></script>
+    <title>Dodaj novico</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Dodaj novico</h1>
+    </nav>
+    <main>
+      <form action="/admin/new-post" method="POST">
+        <label for="title">Naslov</label>
+        <input type="text" required name="title" value="<%=post.title %> " />
+        <label for="content">Vsebina</label>
+        <textarea onKeyUp="count_it()" id="text-area" maxlength="3000" required type="text" name="content"><%= post.content %></textarea>
+        <div class="counter-wrapper">
+          <div id="counter"></div>
+          <div>/3000</div>
+        </div>
+        <a href="/admin"><div class="cancel">Prekini dodajanje</div></a> <br />
+        <button type="submit">Shrani Novico</button>
+      </form>
+    </main>
+    <footer>&copy; PGD Uršna sela</footer>
+  </body>
+</html>

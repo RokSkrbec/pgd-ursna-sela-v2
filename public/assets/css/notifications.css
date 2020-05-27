@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f3f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 0;
+  background-color: #f3f3f3;
+}
+
+nav h1 {
+  font-size: 2.5rem;
+  color: #2c2f33;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+main form label {
+  font-size: 1.5rem;
+}
+
+main form input {
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+  padding: 0.2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+main form a {
+  color: #f3f3f3;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+main form .cancel {
+  display: inline-block;
+  background-color: #36393f;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+}
+
+main form .cancel:hover {
+  background-color: #f02127;
+}
+
+main form textarea {
+  resize: none;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  height: 5em;
+  font-family: 'Inter', sans-serif;
+}
+
+main form .counter-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main form button {
+  background-color: #36393f;
+  color: #f3f3f3;
+  border: none;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+  font-family: 'Inter', sans-serif;
+}
+
+main form button:hover {
+  background-color: #f02127;
+}
+/*# sourceMappingURL=notifications.css.map */

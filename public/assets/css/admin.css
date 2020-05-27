@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f3f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 0;
+  background-color: #f3f3f3;
+}
+
+nav h1 {
+  font-size: 2.5rem;
+  color: #2c2f33;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+nav a .home-page-link {
+  padding: 1rem;
+  background-color: #36393f;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+}
+
+nav a .home-page-link:hover {
+  background-color: #f02127;
+}
+
+main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+main section {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main section h2 {
+  color: #2c2f33;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+main section .hidden {
+  display: none;
+}
+
+main section .notifications-wrapper a,
+main section .posts-wrapper a {
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+main section .notifications-wrapper .add-notification-link,
+main section .notifications-wrapper .add-post-link,
+main section .posts-wrapper .add-notification-link,
+main section .posts-wrapper .add-post-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #36393f;
+  color: #f3f3f3;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+}
+
+main section .notifications-wrapper .add-notification-link:hover,
+main section .notifications-wrapper .add-post-link:hover,
+main section .posts-wrapper .add-notification-link:hover,
+main section .posts-wrapper .add-post-link:hover {
+  background-color: #f02127;
+}
+
+main section .notifications-wrapper .notification,
+main section .notifications-wrapper .post,
+main section .posts-wrapper .notification,
+main section .posts-wrapper .post {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+main section .notifications-wrapper .notification .notification-title,
+main section .notifications-wrapper .notification .post-title,
+main section .notifications-wrapper .post .notification-title,
+main section .notifications-wrapper .post .post-title,
+main section .posts-wrapper .notification .notification-title,
+main section .posts-wrapper .notification .post-title,
+main section .posts-wrapper .post .notification-title,
+main section .posts-wrapper .post .post-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2f33;
+}
+
+main section .notifications-wrapper .notification .post-slug,
+main section .notifications-wrapper .post .post-slug,
+main section .posts-wrapper .notification .post-slug,
+main section .posts-wrapper .post .post-slug {
+  font-size: 1rem;
+  color: #36393f;
+  margin-bottom: 0.5rem;
+}
+
+main section .notifications-wrapper .notification .notification-date,
+main section .notifications-wrapper .notification .post-date,
+main section .notifications-wrapper .post .notification-date,
+main section .notifications-wrapper .post .post-date,
+main section .posts-wrapper .notification .notification-date,
+main section .posts-wrapper .notification .post-date,
+main section .posts-wrapper .post .notification-date,
+main section .posts-wrapper .post .post-date {
+  font-size: 1rem;
+  color: #36393f;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+main section .notifications-wrapper .notification .notification-content,
+main section .notifications-wrapper .notification .post-content,
+main section .notifications-wrapper .post .notification-content,
+main section .notifications-wrapper .post .post-content,
+main section .posts-wrapper .notification .notification-content,
+main section .posts-wrapper .notification .post-content,
+main section .posts-wrapper .post .notification-content,
+main section .posts-wrapper .post .post-content {
+  font-size: 1.3rem;
+  color: #36393f;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main section .notifications-wrapper .notification .notification-actions-wrapper,
+main section .notifications-wrapper .notification .post-actions-wrapper,
+main section .notifications-wrapper .post .notification-actions-wrapper,
+main section .notifications-wrapper .post .post-actions-wrapper,
+main section .posts-wrapper .notification .notification-actions-wrapper,
+main section .posts-wrapper .notification .post-actions-wrapper,
+main section .posts-wrapper .post .notification-actions-wrapper,
+main section .posts-wrapper .post .post-actions-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+main section .notifications-wrapper .notification .edit-notification-link,
+main section .notifications-wrapper .notification .edit-post-link,
+main section .notifications-wrapper .post .edit-notification-link,
+main section .notifications-wrapper .post .edit-post-link,
+main section .posts-wrapper .notification .edit-notification-link,
+main section .posts-wrapper .notification .edit-post-link,
+main section .posts-wrapper .post .edit-notification-link,
+main section .posts-wrapper .post .edit-post-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #36393f;
+  margin-right: 1rem;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+}
+
+main section .notifications-wrapper .notification .edit-notification-link:hover,
+main section .notifications-wrapper .notification .edit-post-link:hover,
+main section .notifications-wrapper .post .edit-notification-link:hover,
+main section .notifications-wrapper .post .edit-post-link:hover,
+main section .posts-wrapper .notification .edit-notification-link:hover,
+main section .posts-wrapper .notification .edit-post-link:hover,
+main section .posts-wrapper .post .edit-notification-link:hover,
+main section .posts-wrapper .post .edit-post-link:hover {
+  background-color: #f02127;
+}
+
+main section .notifications-wrapper .notification .delete-notification-button,
+main section .notifications-wrapper .notification .delete-post-button,
+main section .notifications-wrapper .post .delete-notification-button,
+main section .notifications-wrapper .post .delete-post-button,
+main section .posts-wrapper .notification .delete-notification-button,
+main section .posts-wrapper .notification .delete-post-button,
+main section .posts-wrapper .post .delete-notification-button,
+main section .posts-wrapper .post .delete-post-button {
+  background-color: #36393f;
+  color: #f3f3f3;
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
+}
+
+main section .notifications-wrapper .notification .delete-notification-button:hover,
+main section .notifications-wrapper .notification .delete-post-button:hover,
+main section .notifications-wrapper .post .delete-notification-button:hover,
+main section .notifications-wrapper .post .delete-post-button:hover,
+main section .posts-wrapper .notification .delete-notification-button:hover,
+main section .posts-wrapper .notification .delete-post-button:hover,
+main section .posts-wrapper .post .delete-notification-button:hover,
+main section .posts-wrapper .post .delete-post-button:hover {
+  background-color: #f02127;
+}
+
+main section .notifications-wrapper .notification:hover,
+main section .notifications-wrapper .post:hover,
+main section .posts-wrapper .notification:hover,
+main section .posts-wrapper .post:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #f3f3f3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=admin.css.map */
