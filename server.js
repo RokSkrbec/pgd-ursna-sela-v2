@@ -9,6 +9,7 @@ const ejs = require('ejs')
 const methodOverride = require('method-override')
 const multer = require('multer')
 const path = require('path')
+const fs = require('fs')
 
 //models
 const Post = require('./models/Post')
@@ -230,8 +231,6 @@ app.post('/admin/images/:slug', async (req, res) => {
         post = await post.save()
         post.content = req.file.filename
         res.redirect(`/admin/edit-post/${postSlug}`)
-        console.log(req.file.filename)
-        console.log(post)
       }
     }
   })
@@ -240,10 +239,19 @@ app.post('/admin/images/:slug', async (req, res) => {
 // delete image
 app.delete('/admin/delete-image/:postId/:imageId', async (req, res) => {
   let post = await Post.findOne({ _id: req.params.postId })
+  let image = await post.images.id(req.params.imageId)
+  console.log(image.path)
   post.images.pull({ _id: req.params.imageId })
   post = await post.save()
+  try {
+    fs.unlinkSync(`./public/uploads/${image.path}`)
+    //file removed
+  } catch (err) {
+    console.error(err)
+  }
   res.redirect(`/admin/edit-post/${post.slug}`)
 })
+
 // Start server
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server started.')
