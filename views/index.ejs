@@ -3,12 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
+    <script src="/public/assets/js/main.js" defer></script>
     <title>PGD Uršna sela</title>
   </head>
   <body>
-    <h1>PGD Uršna sela</h1>
-    <h1><%=notification.title %></h1>
-    <h2><%=notification.content %></h2>
+    <header>
+      <div class="header-container">
+        <div class="logo"><img src="../public/assets/images/logo.png" alt="" /></div>
+        <div class="title">Prostovoljno gasilsko društvo <span>Uršna sela</span></div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <a href="#"
+          ><li><i class="fas fa-bullhorn"></i>Obvestila</li></a
+        >
+        <a href=""
+          ><li><i class="far fa-newspaper"></i>Novice</li></a
+        >
+        <a href=""
+          ><li><i class="fas fa-truck"></i>Vozila</li></a
+        >
+        <a href=""
+          ><li><i class="far fa-calendar"></i>Dvorana</li></a
+        >
+      </ul>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          Z <br />
+          gasilskim <br />
+          pozdravom <br />
+          na <br />
+          pomoč!
+        </div>
+        <div class="action-arrow">
+          <a href="#welcome-anchor"><i class="far fa-arrow-alt-circle-down"></i></a>
+        </div>
+      </section>
+      <section class="welcome">
+        <div class="welcome-title">DOBRODOŠLI</div>
+        <div class="welcome-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id reiciendis labore quisquam rem iure delectus! Cupiditate obcaecati perspiciatis eligendi molestias corporis beatae quam
+          nobis laudantium! Illo modi ratione natus iste maxime repellat minus porro, sequi corporis cumque facilis fugit dignissimos laudantium possimus ut! Sunt rem hic vel quasi voluptate.
+        </div>
+        <div class="welcome-image"><img src="/public/assets/images/gasilski-dom.jpg" alt="" /></div>
+      </section>
+      <section class="notifications">
+        <div class="notifications-title">OBVESTILA</div>
+        <div class="notification-wrapper">
+          <div class="notification-date"><i class="far fa-calendar"></i> <%= ` ${notification.date.getDate()}.${notification.date.getMonth()}.${notification.date.getFullYear()}` %></div>
+          <div class="notification-title"><%=notification.title %></div>
+
+          <div class="notification-content"><%=notification.content %></div>
+        </div>
+      </section>
+      <section class="news">
+        <div class="news-title">NOVICE</div>
+        <div class="news-wrapper">
+          <% posts.forEach(post => { %>
+          <div class="post-wrapper">
+            <div class="post-date"><i class="far fa-calendar"></i> <%= ` ${post.date.getDate()}.${post.date.getMonth()}.${post.date.getFullYear()}` %></div>
+            <div class="post-title"><%= post.title %></div>
+            <div class="post-image"><img src="/public/uploads/<%=post.images[0].path  %> " alt="" /></div>
+            <div class="post-content"><%= post.content %></div>
+            <a href="post/<%= post.slug %>"><div class="post-button">Preberi več</div></a>
+          </div>
+          <% }) %>
+        </div>
+      </section>
+      <section class="vehicles">
+        <div class="vehicles-title">VOZILA</div>
+        <div class="vehicles-wrapper">
+          <div class="vehicle-wrapper">
+            <div class="vehicle-image"><img src="/public/assets/images/vehicles/vehicle-01.svg" alt="" /></div>
+            <div class="vehicle-title">Lorem ipsum dolor sit amet.</div>
+            <div class="vehicle-description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis cum quas ullam, eaque et ipsam ipsa quidem eum quo enim officiis minus vel minima? Dignissimos ullam animi nihil sed
+              quia quam ipsam excepturi, exercitationem dolorum facere suscipit qui, nemo quos.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="calendar"></section>
+    </main>
+    <footer></footer>
+
     <% posts.forEach(post => { %>
     <h2><%= post.title %></h2>
     <p><%= post.date %></p>
