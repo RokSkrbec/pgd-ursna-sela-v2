@@ -17,16 +17,16 @@
     </header>
     <nav>
       <ul>
-        <a href="#"
+        <a href="#notifications-anchor"
           ><li><i class="fas fa-bullhorn"></i>Obvestila</li></a
         >
-        <a href=""
+        <a href="#news-anchor"
           ><li><i class="far fa-newspaper"></i>Novice</li></a
         >
-        <a href=""
+        <a href="#vehicles-anchor"
           ><li><i class="fas fa-truck"></i>Vozila</li></a
         >
-        <a href=""
+        <a href="#calendar-anchor"
           ><li><i class="far fa-calendar"></i>Dvorana</li></a
         >
       </ul>
@@ -37,14 +37,16 @@
           Z <br />
           gasilskim <br />
           pozdravom <br />
-          na <br />
-          pomoč!
+          <span
+            >na <br />
+            pomoč!
+          </span>
         </div>
         <div class="action-arrow">
           <a href="#welcome-anchor"><i class="far fa-arrow-alt-circle-down"></i></a>
         </div>
       </section>
-      <section class="welcome">
+      <section class="welcome" id="welcome-anchor">
         <div class="welcome-title">DOBRODOŠLI</div>
         <div class="welcome-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id reiciendis labore quisquam rem iure delectus! Cupiditate obcaecati perspiciatis eligendi molestias corporis beatae quam
@@ -52,7 +54,7 @@
         </div>
         <div class="welcome-image"><img src="/public/assets/images/gasilski-dom.jpg" alt="" /></div>
       </section>
-      <section class="notifications">
+      <section class="notifications" id="notifications-anchor">
         <div class="notifications-title">OBVESTILA</div>
         <div class="notification-wrapper">
           <div class="notification-date"><i class="far fa-calendar"></i> <%= ` ${notification.date.getDate()}.${notification.date.getMonth()}.${notification.date.getFullYear()}` %></div>
@@ -61,7 +63,7 @@
           <div class="notification-content"><%=notification.content %></div>
         </div>
       </section>
-      <section class="news">
+      <section class="news" id="news-anchor">
         <div class="news-title">NOVICE</div>
         <div class="news-wrapper">
           <% posts.forEach(post => { %>
@@ -75,8 +77,9 @@
           <% }) %>
         </div>
       </section>
-      <section class="vehicles">
+      <section class="vehicles" id="vehicles-anchor">
         <div class="vehicles-title">VOZILA</div>
+        <div class="vehicles-description">Za hitro in uspešno reševanje so potrebna redno vzdrževana vozila. Spodaj vam predstavljamo naš vozni park.</div>
         <div class="vehicles-wrapper">
           <div class="vehicle-wrapper">
             <div class="vehicle-image"><img src="/public/assets/images/vehicles/vehicle-01.png" alt="" /></div>
@@ -88,11 +91,11 @@
           </div>
         </div>
       </section>
-      <section class="calendar">
+      <section class="calendar" id="calendar-anchor">
         <div class="calendar-title">DVORANA</div>
         <div class="calendar-wrapper">
           <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23f02127&amp;ctz=Europe%2FBelgrade&amp;src=MG1nY2sycGlzdG1hYzBkNjkwbmRpcDIxa2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;hl=sl"
+            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23f3f3f3&amp;ctz=Europe%2FBelgrade&amp;src=MG1nY2sycGlzdG1hYzBkNjkwbmRpcDIxa2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;hl=sl"
             style="border-width: 0;"
             width="800"
             height="600"
@@ -102,7 +105,18 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="left-side">
+          <div class="logo"><img src="../public/assets/images/logo.png" alt="" /></div>
+        </div>
+        <div class="right-side">
+          <i class="fas fa-map-marker-alt"></i> Gasilska pot 5, <br />
+          8323 Uršna sela <br />
+          <i class="fas fa-phone"></i> 051-330-914
+        </div>
+      </div>
+    </footer>
 
     <% posts.forEach(post => { %>
     <h2><%= post.title %></h2>

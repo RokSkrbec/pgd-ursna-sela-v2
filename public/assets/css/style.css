@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: #f3f3f3;
 }
 
 * {
@@ -62,7 +64,7 @@ nav {
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 0.5rem 0 0.2rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   background-color: #f02127;
   color: #f3f3f3;
 }
@@ -95,10 +97,18 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0.2rem 1.7rem;
+  border-radius: 0.5rem;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 nav ul li i {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+nav ul li:hover {
+  background-color: #f3474c;
 }
 
 main {
@@ -114,7 +124,7 @@ main {
 main .hero {
   width: 100%;
   height: 100vh;
-  background-image: url(/public/assets/images/hero-image.jpg);
+  background-image: url(/public/assets/images/hero-image-2.png);
   background-size: cover;
 }
 
@@ -135,18 +145,23 @@ main .hero .action-arrow a {
 
 main .hero .hero-text {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   font-size: 3rem;
-  color: #f3f3f3;
+  font-weight: bolder;
+  color: #f02127;
   text-align: center;
   -webkit-animation: opacityPulse 3s ease-out;
           animation: opacityPulse 3s ease-out;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  opacity: 0.2;
+  opacity: 0.4;
+}
+
+main .hero .hero-text span {
+  color: #f3f3f3;
 }
 
 main .welcome {
@@ -166,12 +181,14 @@ main .welcome {
 main .welcome .welcome-title {
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 main .welcome .welcome-text {
   width: 90%;
   text-align: justify;
   font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
 main .welcome .welcome-image {
@@ -200,7 +217,7 @@ main .notifications {
 main .notifications .notifications-title {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 main .notifications .notification-wrapper {
@@ -274,6 +291,12 @@ main .news .news-wrapper {
           flex-direction: column;
 }
 
+main .news .news-wrapper .post-wrapper {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
 main .news .news-wrapper .post-wrapper .post-date {
   font-size: 1.2rem;
   color: #7e8490;
@@ -310,6 +333,13 @@ main .news .news-wrapper .post-wrapper .post-button {
   font-size: 1.2rem;
   border-radius: 0.2rem;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+main .news .news-wrapper .post-wrapper .post-button:hover {
+  background-color: #f3f3f3;
+  color: #f02127;
 }
 
 main .vehicles {
@@ -330,8 +360,20 @@ main .vehicles .vehicles-title {
   font-weight: bold;
 }
 
+main .vehicles .vehicles-description {
+  width: 90%;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
 main .vehicles .vehicles-wrapper {
   width: 90%;
+}
+
+main .vehicles .vehicles-wrapper .vehicle-wrapper {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-image img {
@@ -340,7 +382,7 @@ main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-image img {
 }
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-description {
@@ -364,6 +406,7 @@ main .calendar {
 main .calendar .calendar-title {
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 main .calendar .calendar-wrapper {
@@ -372,6 +415,7 @@ main .calendar .calendar-wrapper {
   padding-bottom: 75%;
   height: 0;
   overflow: hidden;
+  z-index: -1;
 }
 
 main .calendar .calendar-wrapper iframe {
@@ -383,27 +427,71 @@ main .calendar .calendar-wrapper iframe {
   z-index: -1;
 }
 
+footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 0;
+  -webkit-box-shadow: 0 2px 6px 2px rgba(255, 0, 0, 0.2);
+          box-shadow: 0 2px 6px 2px rgba(255, 0, 0, 0.2);
+}
+
+footer .footer-wrapper {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-wrapper .left-side .logo {
+  width: 3.5rem;
+}
+
+footer .footer-wrapper .left-side .logo img {
+  max-width: 100%;
+}
+
+footer .footer-wrapper .right-side {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+footer .footer-wrapper .right-side i {
+  color: #f02127;
+}
+
 @-webkit-keyframes opacityPulse {
   0% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
 }
 
 @keyframes opacityPulse {
   0% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
 }
 

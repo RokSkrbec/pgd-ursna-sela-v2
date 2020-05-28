@@ -5,6 +5,8 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: $backgroundColor;
 }
 
 * {
@@ -51,7 +53,7 @@ nav {
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 0.5rem 0 0.2rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   background-color: $terciaryColor;
   color: $backgroundColor;
 
@@ -71,10 +73,17 @@ nav {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0.2rem 1.7rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.5s ease;
 
       i {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
+    }
+
+    li:hover {
+      background-color: lighten($terciaryColor, 8);
     }
   }
 }
@@ -88,7 +97,7 @@ main {
   .hero {
     width: 100%;
     height: 100vh;
-    background-image: url(/public/assets/images/hero-image.jpg);
+    background-image: url(/public/assets/images/hero-image-2.png);
     background-size: cover;
     .action-arrow {
       position: absolute;
@@ -105,15 +114,20 @@ main {
 
     .hero-text {
       position: absolute;
-      top: 40%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%);
       font-size: 3rem;
-      color: $backgroundColor;
+      font-weight: bolder;
+      color: $terciaryColor;
       text-align: center;
       animation: opacityPulse 3s ease-out;
       animation-iteration-count: infinite;
-      opacity: 0.2;
+      opacity: 0.4;
+
+      span {
+        color: $backgroundColor;
+      }
     }
   }
 
@@ -126,12 +140,14 @@ main {
     .welcome-title {
       font-size: 3rem;
       font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     .welcome-text {
       width: 90%;
       text-align: justify;
       font-size: 1.4rem;
+      margin-bottom: 0.5rem;
     }
 
     .welcome-image {
@@ -152,7 +168,7 @@ main {
     .notifications-title {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .notification-wrapper {
@@ -205,6 +221,9 @@ main {
       flex-direction: column;
 
       .post-wrapper {
+        background-color: rgb(235, 235, 235);
+        padding: 0.5rem;
+        border-radius: 0.3rem;
         .post-date {
           font-size: 1.2rem;
           color: lighten($secondaryColor, 30);
@@ -241,6 +260,12 @@ main {
           font-size: 1.2rem;
           border-radius: 0.2rem;
           cursor: pointer;
+          transition: all 1s ease;
+        }
+
+        .post-button:hover {
+          background-color: $backgroundColor;
+          color: $terciaryColor;
         }
       }
     }
@@ -256,10 +281,20 @@ main {
       font-weight: bold;
     }
 
+    .vehicles-description {
+      width: 90%;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
     .vehicles-wrapper {
       width: 90%;
 
       .vehicle-wrapper {
+        background-color: rgb(235, 235, 235);
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+
         .vehicle-image {
           img {
             border-radius: 0.3rem;
@@ -267,7 +302,7 @@ main {
           }
         }
         .vehicle-title {
-          font-size: 2rem;
+          font-size: 2.2rem;
         }
         .vehicle-description {
           font-size: 1.4rem;
@@ -285,6 +320,7 @@ main {
     .calendar-title {
       font-size: 3rem;
       font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     .calendar-wrapper {
@@ -293,6 +329,7 @@ main {
       padding-bottom: 75%;
       height: 0;
       overflow: hidden;
+      z-index: -1;
 
       iframe {
         position: absolute;
@@ -306,15 +343,51 @@ main {
   }
 }
 
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+
+  box-shadow: 0 2px 6px 2px rgba(255, 0, 0, 0.2);
+
+  .footer-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left-side {
+      .logo {
+        width: 3.5rem;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .right-side {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+
+      i {
+        color: $terciaryColor;
+      }
+    }
+  }
+}
+
 @keyframes opacityPulse {
   0% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
 }
 
