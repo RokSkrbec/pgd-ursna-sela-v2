@@ -336,6 +336,7 @@ main .vehicles .vehicles-wrapper {
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-image img {
   border-radius: 0.3rem;
+  max-width: 100%;
 }
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-title {
@@ -344,6 +345,42 @@ main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-title {
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper .vehicle-description {
   font-size: 1.4rem;
+}
+
+main .calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+main .calendar .calendar-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+main .calendar .calendar-wrapper {
+  width: 90%;
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+
+main .calendar .calendar-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 @-webkit-keyframes opacityPulse {
