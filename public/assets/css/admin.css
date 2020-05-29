@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html {
   font-size: 62.5%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f3f3f3;
 }
 
@@ -231,7 +231,7 @@ main section .posts-wrapper .post .delete-post-button {
   background-color: #36393f;
   color: #f3f3f3;
   padding: 0.5rem 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   border: none;
   font-size: 1rem;
   cursor: pointer;

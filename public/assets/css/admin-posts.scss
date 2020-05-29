@@ -1,0 +1,181 @@
+@import './_variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  background-color: $backgroundColor;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 0;
+  background-color: $backgroundColor;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $primaryColor;
+  }
+}
+main {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    label {
+      font-size: 1.2rem;
+    }
+    input {
+      width: 100%;
+      font-size: 1.2rem;
+      outline: none;
+      padding: 0.2rem;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: $backgroundColor;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+    }
+    .cancel {
+      display: inline-block;
+      background-color: $secondaryColor;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      transition: background-color 0.6s ease-in;
+    }
+    .cancel:hover {
+      background-color: $terciaryColor;
+    }
+
+    textarea {
+      resize: none;
+      font-size: 1.2rem;
+      padding: 0.2rem;
+      height: 15em;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .counter-wrapper {
+      display: flex;
+    }
+    button {
+      background-color: $secondaryColor;
+      color: $backgroundColor;
+      border: none;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0;
+      cursor: pointer;
+      font-size: 1.3rem;
+      transition: background-color 0.6s ease-in;
+      font-family: 'Roboto', sans-serif;
+    }
+    button:hover {
+      background-color: $terciaryColor;
+    }
+
+    [type='file'] {
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute !important;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    [type='file'] + label {
+      width: 50%;
+      background-color: $secondaryColor;
+      color: $backgroundColor;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 0;
+      font-size: 1.2rem;
+      transition: background-color 0.6s ease-in;
+      text-align: center;
+    }
+
+    [type='file']:focus + label,
+    [type='file'] + label:hover {
+      background-color: $terciaryColor;
+    }
+
+    [type='file']:focus + label {
+      outline: 1px dotted #000;
+    }
+  }
+}
+
+.gallery-wrapper {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+
+  .image-wrapper {
+    //width: 40%;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+
+    img {
+      width: 100%;
+    }
+    .image-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.5rem;
+      font-size: 1.5rem;
+      color: $secondaryColor;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .delete-image-button {
+          background: none;
+          color: $secondaryColor;
+          font-size: 1.5rem;
+          transition: color 0.6s ease-in;
+        }
+        .delete-image-button:hover {
+          color: $terciaryColor;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: $backgroundColor;
+  align-items: center;
+  justify-content: center;
+}

@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/assets/css/posts.css" />
+    <link rel="stylesheet" href="/public/assets/css/admin-posts.css" />
     <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
-    <script src="/public/assets/js/posts.js" defer></script>
+    <script src="/public/assets/js/admin-posts.js" defer></script>
     <title>Uredi novico</title>
   </head>
   <body>
@@ -15,9 +15,9 @@
     <main>
       <form action="/admin/edit-post/<%= post.slug %>?_method=PUT" method="POST">
         <label for="title">Naslov</label>
-        <input type="text" name="title" required value="<%=post.title %> " /> <br />
+        <input type="text" name="title" required value="<%=post.title %> " /> 
         <label for="content">Vsebina</label>
-        <textarea onKeyUp="count_it()" id="text-area" maxlength="3000" required type="text" name="content"><%= post.content %> </textarea> <br />
+        <textarea onKeyUp="count_it()" id="text-area" maxlength="3000" required type="text" name="content"><%= post.content %> </textarea>
         <div class="counter-wrapper">
           <div id="counter"></div>
           <div>/3000</div>
@@ -35,6 +35,7 @@
         <div class="file-name">Nobena slika ni izbrana</div>
         <button type="submit">Dodaj sliko</button>
       </form>
+      <%= typeof msg != 'undefined' ? msg : '' %>
       <h2>Galerija</h2>
       <div class="gallery-wrapper">
       <% post.images.forEach(image => { %>

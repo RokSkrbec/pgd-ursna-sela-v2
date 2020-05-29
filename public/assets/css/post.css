@@ -118,46 +118,42 @@ main {
 main section {
   width: 90%;
   margin-top: 2rem;
-  margin-bottom: 4.4rem;
 }
 
-main section .post-wrapper {
-  background-color: #ebebeb;
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  margin-bottom: 1rem;
-}
-
-main section .post-wrapper .post-title {
-  font-size: 2rem;
+main section .post-title {
+  font-size: 3rem;
   margin-bottom: 0.1rem;
 }
 
-main section .post-wrapper .post-date {
-  font-size: 1rem;
+main section .post-date {
+  font-size: 1.2rem;
   color: #36393f;
   margin-bottom: 1rem;
 }
 
-main section .post-wrapper .post-content {
-  font-size: 1.2rem;
+main section .post-content {
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
-main section .post-wrapper .post-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #f02127;
-  color: #f3f3f3;
-  font-size: 1.2rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+main section .gallery-wrapper {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 4rem;
 }
 
-main section .post-wrapper .post-button:hover {
-  background-color: #f3f3f3;
-  color: #f02127;
+main section .gallery-wrapper .image-wrapper {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
 }
-/*# sourceMappingURL=posts.css.map */
+
+main section .gallery-wrapper .image-wrapper img {
+  width: 100%;
+}
+/*# sourceMappingURL=post.css.map */

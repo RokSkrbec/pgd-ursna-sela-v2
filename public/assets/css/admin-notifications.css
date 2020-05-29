@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html {
   font-size: 62.5%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f3f3f3;
 }
 
@@ -67,13 +67,13 @@ main form input {
   font-size: 1.2rem;
   outline: none;
   padding: 0.2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 main form a {
   color: #f3f3f3;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 main form .cancel {
@@ -95,7 +95,7 @@ main form textarea {
   font-size: 1.2rem;
   padding: 0.2rem;
   height: 5em;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 main form .counter-wrapper {
@@ -114,10 +114,10 @@ main form button {
   font-size: 1.3rem;
   -webkit-transition: background-color 0.6s ease-in;
   transition: background-color 0.6s ease-in;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 main form button:hover {
   background-color: #f02127;
 }
-/*# sourceMappingURL=notifications.css.map */
+/*# sourceMappingURL=admin-notifications.css.map */

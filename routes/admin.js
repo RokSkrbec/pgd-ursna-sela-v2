@@ -1,46 +1,14 @@
 const express = require('express')
-const app = express()
+const router = express.Router()
 
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-require('dotenv/config')
-const ejs = require('ejs')
-const methodOverride = require('method-override')
 const multer = require('multer')
 const path = require('path')
-const fs = require('fs')
 
-//models
-const Post = require('./models/Post')
-const Notification = require('./models/Notification')
+const Notification = require('../models/Notification')
+const Post = require('../models/Post')
 
-// middlewares
-app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
-app.use(methodOverride('_method'))
-app.use('/public', express.static('public'))
-
-// import routes
-//const postsRoute = require('./routes/posts')
-//const notificationsRoute = require('./routes/notifications')
-const adminRoute = require('./routes/admin')
-
-//app.use('/posts', postsRoute)
-//app.use('/notifications', notificationsRoute)
-app.use('/admin', adminRoute)
-
-//------------------- Routes ----------------------
-// Main page
-app.get('/', async (req, res) => {
-  const posts = await Post.find().sort({ date: 'desc' })
-  const notification = await Notification.findOne().sort({ date: -1 })
-  res.render('index', { posts: posts, notification: notification })
-})
-
-/*
 // Admin control panel
-app.get('/admin', async (req, res) => {
+router.get('/', async (req, res) => {
   const posts = await Post.find().sort({ date: 'desc' })
   const notifications = await Notification.find().sort({ date: 'desc' })
   res.render('admin/admin', { posts: posts, notifications: notifications })
@@ -48,12 +16,12 @@ app.get('/admin', async (req, res) => {
 
 //-------------- Posts routes (Admin) -------------------
 // Add new post (opens add new post page)
-app.get('/admin/new-post', (req, res) => {
+router.get('/new-post', (req, res) => {
   res.render('admin/new-post', { post: new Post() })
 })
 
 // Add new post (after clicking save post)
-app.post('/admin/new-post', async (req, res) => {
+router.post('/new-post', async (req, res) => {
   let post = new Post({
     title: req.body.title,
     content: req.body.content,
@@ -61,7 +29,7 @@ app.post('/admin/new-post', async (req, res) => {
   try {
     let savedPost = await post.save()
     console.log('Post added')
-    res.redirect('/admin')
+    res.redirect('/')
   } catch (err) {
     console.log(err)
     res.redirect('/')
@@ -69,14 +37,14 @@ app.post('/admin/new-post', async (req, res) => {
 })
 
 // Edit post (opens edit page)
-app.get('/admin/edit-post/:slug', async (req, res) => {
+router.get('/edit-post/:slug', async (req, res) => {
   const post = await Post.findOne({ slug: req.params.slug })
-  if (post == null) res.redirect('/admin')
+  if (post == null) res.redirect('')
   res.render('admin/edit-post', { post: post })
 })
 
 // Edit post (after clicking save post)
-app.put('/admin/edit-post/:slug', async (req, res) => {
+router.put('/edit-post/:slug', async (req, res) => {
   let post = await Post.findOne({ slug: req.params.slug })
   console.log(req.body)
 
@@ -86,7 +54,7 @@ app.put('/admin/edit-post/:slug', async (req, res) => {
   try {
     post = await post.save()
     console.log('Post saved')
-    res.redirect('/admin')
+    res.redirect('')
   } catch (err) {
     console.log(err)
     res.redirect('/')
@@ -94,7 +62,7 @@ app.put('/admin/edit-post/:slug', async (req, res) => {
 })
 
 // Delete post
-app.delete('/admin/delete-post/:slug', async (req, res) => {
+router.delete('/delete-post/:slug', async (req, res) => {
   console.log(req.params.slug)
   await Post.deleteOne({ slug: req.params.slug }, (err, res) => {
     if (err) {
@@ -103,17 +71,17 @@ app.delete('/admin/delete-post/:slug', async (req, res) => {
       console.log('Brisanje uspešno.')
     }
   })
-  res.redirect('/admin')
+  res.redirect('')
 })
 
 //----------------- Notifications Routes (admin) -----------------------
 // Add new notificaiton (opens add new notification page)
-app.get('/admin/new-notification', (req, res) => {
+router.get('/new-notification', (req, res) => {
   res.render('admin/new-notification', { notification: new Notification() })
 })
 
 // Add new notificaiton (after clicking save notificaiton)
-app.post('/admin/new-notification', async (req, res) => {
+router.post('/new-notification', async (req, res) => {
   let notification = new Notification({
     title: req.body.title,
     content: req.body.content,
@@ -121,7 +89,7 @@ app.post('/admin/new-notification', async (req, res) => {
   try {
     let savedNotification = await notification.save()
     console.log('Notification added')
-    res.redirect('/admin')
+    res.redirect('')
   } catch (err) {
     console.log(err)
     res.redirect('/')
@@ -129,14 +97,14 @@ app.post('/admin/new-notification', async (req, res) => {
 })
 
 // Edit notification (opens notification page)
-app.get('/admin/edit-notification/:id', async (req, res) => {
+router.get('/edit-notification/:id', async (req, res) => {
   const notification = await Notification.findOne({ _id: req.params.id })
-  if (notification == null) res.redirect('/admin')
+  if (notification == null) res.redirect('admin/admin')
   res.render('admin/edit-notification', { notification: notification })
 })
 
 // Edit notification (after clicking save notification)
-app.put('/admin/edit-notification/:id', async (req, res) => {
+router.put('/edit-notification/:id', async (req, res) => {
   let notification = await Notification.findOne({ _id: req.params.id })
   console.log(req.body)
 
@@ -146,7 +114,7 @@ app.put('/admin/edit-notification/:id', async (req, res) => {
   try {
     notification = await notification.save()
     console.log('Notification saved')
-    res.redirect('/admin')
+    res.redirect('')
   } catch (err) {
     console.log(err)
     res.redirect('/')
@@ -154,7 +122,7 @@ app.put('/admin/edit-notification/:id', async (req, res) => {
 })
 
 // Delete notification
-app.delete('/admin/delete-notification/:id', async (req, res) => {
+router.delete('/delete-notification/:id', async (req, res) => {
   console.log(req.params.id)
   await Notification.deleteOne({ _id: req.params.id }, (err, res) => {
     if (err) {
@@ -163,11 +131,11 @@ app.delete('/admin/delete-notification/:id', async (req, res) => {
       console.log('Brisanje uspešno.')
     }
   })
-  res.redirect('/admin')
+  res.redirect('')
 })
 
 // upload image
-app.post('/admin/images/:slug', async (req, res) => {
+router.post('/images/:slug', async (req, res) => {
   let postSlug = req.params.slug
   let post = await Post.findOne({ slug: req.params.slug })
   upload(req, res, async (err) => {
@@ -177,9 +145,7 @@ app.post('/admin/images/:slug', async (req, res) => {
       })
     } else {
       if (req.file == undefined) {
-        res.render('/images', {
-          msg: 'Napaka: Izberi sliko!',
-        })
+        res.redirect(`/admin/edit-post/${postSlug}`)
       } else {
         post.images.push({ path: req.file.filename })
         post = await post.save()
@@ -191,7 +157,7 @@ app.post('/admin/images/:slug', async (req, res) => {
 })
 
 // delete image
-app.delete('/admin/delete-image/:postId/:imageId', async (req, res) => {
+router.delete('/delete-image/:postId/:imageId', async (req, res) => {
   let post = await Post.findOne({ _id: req.params.postId })
   let image = await post.images.id(req.params.imageId)
   console.log(image.path)
@@ -205,23 +171,6 @@ app.delete('/admin/delete-image/:postId/:imageId', async (req, res) => {
   }
   res.redirect(`/admin/edit-post/${post.slug}`)
 })
-*/
-
-// Connect to DB
-mongoose
-  .connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(
-    () => {
-      console.log('connected to db')
-    },
-    (err) => {
-      console.log({ message: err })
-    }
-  )
 
 //-----------------------------------------multer----------------------------------
 
@@ -257,21 +206,4 @@ function checkFileType(file, cb) {
   }
 }
 
-// ------------- front end routes ------------------------------
-
-// show single post
-app.get('/post/:slug', async (req, res) => {
-  let post = await Post.findOne({ slug: req.params.slug })
-  res.render('post', { post: post })
-})
-
-// show all posts
-app.get('/posts', async (req, res) => {
-  const posts = await Post.find().sort({ date: 'desc' })
-  res.render('posts', { posts: posts })
-})
-
-// Start server
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server started.')
-})
+module.exports = router

@@ -75,6 +75,7 @@
             <a href="post/<%= post.slug %>"><div class="post-button">Preberi več</div></a>
           </div>
           <% }) %>
+          <a href="/posts"><div class="post-archive-button">Arhiv novic</div></a>
         </div>
       </section>
       <section class="vehicles" id="vehicles-anchor">
@@ -117,11 +118,5 @@
         </div>
       </div>
     </footer>
-
-    <% posts.forEach(post => { %>
-    <h2><%= post.title %></h2>
-    <p><%= post.date %></p>
-    <p><%= post.content %></p>
-    <% }) %>
   </body>
 </html>

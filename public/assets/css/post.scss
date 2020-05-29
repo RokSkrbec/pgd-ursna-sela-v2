@@ -89,43 +89,39 @@ main {
   section {
     width: 90%;
     margin-top: 2rem;
-    margin-bottom: 4.4rem;
 
-    .post-wrapper {
-      background-color: rgb(235, 235, 235);
-      padding: 0.5rem;
-      border-radius: 0.3rem;
+    .post-title {
+      font-size: 3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .post-date {
+      font-size: 1.2rem;
+      color: $secondaryColor;
       margin-bottom: 1rem;
+    }
 
-      .post-title {
-        font-size: 2rem;
-        margin-bottom: 0.1rem;
-      }
+    .post-content {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
 
-      .post-date {
-        font-size: 1rem;
-        color: $secondaryColor;
-        margin-bottom: 1rem;
-      }
+    .gallery-wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 4rem;
 
-      .post-content {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-      .post-button {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background-color: $terciaryColor;
-        color: $backgroundColor;
-        font-size: 1.2rem;
-        border-radius: 0.2rem;
-        cursor: pointer;
-        transition: all 1s ease;
-      }
+      .image-wrapper {
+        //width: 40%;
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
 
-      .post-button:hover {
-        background-color: $backgroundColor;
-        color: $terciaryColor;
+        img {
+          width: 100%;
+        }
       }
     }
   }
