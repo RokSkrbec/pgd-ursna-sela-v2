@@ -82,6 +82,7 @@ main section h2 {
   margin-bottom: 0.5rem;
   cursor: pointer;
   text-decoration: underline;
+  text-transform: uppercase;
 }
 
 main section .hidden {

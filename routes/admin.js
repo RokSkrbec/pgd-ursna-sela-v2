@@ -29,10 +29,10 @@ router.post('/new-post', async (req, res) => {
   try {
     let savedPost = await post.save()
     console.log('Post added')
-    res.redirect('/')
+    res.redirect('/admin')
   } catch (err) {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/admin')
   }
 })
 
@@ -54,10 +54,10 @@ router.put('/edit-post/:slug', async (req, res) => {
   try {
     post = await post.save()
     console.log('Post saved')
-    res.redirect('')
+    res.redirect('/admin')
   } catch (err) {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/admin')
   }
 })
 
@@ -71,7 +71,7 @@ router.delete('/delete-post/:slug', async (req, res) => {
       console.log('Brisanje uspešno.')
     }
   })
-  res.redirect('')
+  res.redirect('/admin')
 })
 
 //----------------- Notifications Routes (admin) -----------------------
@@ -89,7 +89,7 @@ router.post('/new-notification', async (req, res) => {
   try {
     let savedNotification = await notification.save()
     console.log('Notification added')
-    res.redirect('')
+    res.redirect('/admin')
   } catch (err) {
     console.log(err)
     res.redirect('/')
@@ -131,7 +131,7 @@ router.delete('/delete-notification/:id', async (req, res) => {
       console.log('Brisanje uspešno.')
     }
   })
-  res.redirect('')
+  res.redirect('/admin')
 })
 
 // upload image

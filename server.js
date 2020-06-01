@@ -33,9 +33,9 @@ app.use('/admin', adminRoute)
 //------------------- Routes ----------------------
 // Main page
 app.get('/', async (req, res) => {
-  const posts = await Post.find().sort({ date: 'desc' })
-  const notification = await Notification.findOne().sort({ date: -1 })
-  res.render('index', { posts: posts, notification: notification })
+  const posts = await Post.find().sort({ date: 'desc' }).limit(3)
+  const notifications = await Notification.find().sort({ date: 'desc' }).limit(1)
+  res.render('index', { posts: posts, notifications: notifications })
 })
 
 /*

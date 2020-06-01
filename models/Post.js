@@ -29,6 +29,11 @@ const PostSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
+  isArchived: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
   images: [imagesSchema],
 })
 

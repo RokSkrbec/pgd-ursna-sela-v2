@@ -1,7 +1,7 @@
 @import './_variables';
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
 
 html {
   font-size: 62.5%;
@@ -35,15 +35,14 @@ header {
   }
 
   .title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.2rem;
-    font-weight: bold;
+    font-family: 'Suez One', serif;
+    font-size: 2rem;
+
     color: $terciaryColor;
     text-align: center;
 
     span {
       color: $backgroundColor;
-      font-weight: bolder;
     }
   }
 }
@@ -92,7 +91,7 @@ main {
   color: $primaryColor;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   .hero {
     width: 100%;
     height: 100vh;
@@ -100,10 +99,10 @@ main {
     background-size: cover;
     .action-arrow {
       position: absolute;
-      bottom: 5rem;
+      bottom: 6rem;
       left: 50%;
       transform: translate(-50%);
-      font-size: 3rem;
+      font-size: 5rem;
       cursor: pointer;
     }
     .action-arrow a {
@@ -112,6 +111,7 @@ main {
     }
 
     .hero-text {
+      font-family: 'Suez One', serif;
       position: absolute;
       top: 30%;
       left: 50%;
@@ -120,12 +120,13 @@ main {
       font-weight: bolder;
       color: $terciaryColor;
       text-align: center;
-      animation: opacityPulse 3s ease-out;
+      animation: opacityPulse 2.5s ease-out;
       animation-iteration-count: infinite;
-      opacity: 0.4;
+      opacity: 0.5;
 
       span {
         color: $backgroundColor;
+        text-transform: uppercase;
       }
     }
   }
@@ -136,17 +137,21 @@ main {
     flex-direction: column;
     align-items: center;
 
+    //scroll-to anchor offset from top
+    padding-top: 1rem;
+    margin-top: -1rem;
+
     .welcome-title {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .welcome-text {
       width: 90%;
       text-align: justify;
       font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .welcome-image {
@@ -164,10 +169,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    //scroll-to anchor offset from top
+    padding-top: 1rem;
+    margin-top: -1rem;
+
     .notifications-title {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .notification-wrapper {
@@ -208,10 +218,14 @@ main {
     flex-direction: column;
     align-items: center;
 
+    //scroll-to anchor offset from top
+    padding-top: 1rem;
+    margin-top: -1rem;
+
     .news-title {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .news-wrapper {
@@ -221,6 +235,8 @@ main {
       align-items: center;
 
       .post-wrapper {
+        display: flex;
+        flex-direction: column;
         background-color: rgb(235, 235, 235);
         padding: 0.5rem;
         border-radius: 0.3rem;
@@ -250,21 +266,27 @@ main {
           font-size: 1.4rem;
           margin-bottom: 0.5rem;
         }
+        .post-button-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
 
-        .post-button {
-          display: inline-block;
-          padding: 0.5rem 1rem;
-          background-color: $terciaryColor;
-          color: $backgroundColor;
-          font-size: 1.2rem;
-          border-radius: 0.2rem;
-          cursor: pointer;
-          transition: all 1s ease;
-        }
+          .post-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: $terciaryColor;
+            color: $backgroundColor;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-radius: 0.2rem;
+            cursor: pointer;
+            transition: all 1s ease;
+          }
 
-        .post-button:hover {
-          background-color: $backgroundColor;
-          color: $terciaryColor;
+          .post-button:hover {
+            background-color: $backgroundColor;
+            color: $terciaryColor;
+          }
         }
       }
 
@@ -273,7 +295,8 @@ main {
         padding: 0.5rem 2.5rem;
         background-color: $terciaryColor;
         color: $backgroundColor;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
         text-align: center;
         margin-top: 0.5rem;
         border-radius: 0.2rem;
@@ -293,9 +316,14 @@ main {
     flex-direction: column;
     align-items: center;
 
+    //scroll-to anchor offset from top
+    padding-top: 1rem;
+    margin-top: -1rem;
+
     .vehicles-title {
       font-size: 3rem;
       font-weight: bold;
+      margin-bottom: 1.5rem;
     }
 
     .vehicles-description {
@@ -334,10 +362,14 @@ main {
     align-items: center;
     margin-bottom: 2rem;
 
+    //scroll-to anchor offset from top
+    padding-top: 1rem;
+    margin-top: -1rem;
+
     .calendar-title {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .calendar-wrapper {
@@ -399,13 +431,13 @@ footer {
 
 @keyframes opacityPulse {
   0% {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 }
 
