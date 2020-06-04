@@ -3,7 +3,9 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background: radial-gradient(circle, white 0%, rgba(240, 33, 39, 0.053659) 100%);
+  background-color: #f4f4f4;
+  background-image: url(/public/assets/images/fire-tools-very-very-light.png);
+  background-size: contain;
 }
 
 * {
@@ -53,7 +55,7 @@ header .title {
 }
 
 header .title span {
-  color: #f3f3f3;
+  color: #f4f4f4;
 }
 
 nav {
@@ -62,11 +64,11 @@ nav {
   bottom: 0;
   padding: 0.5rem 0 0.5rem 0;
   background-color: #f02127;
-  color: #f3f3f3;
+  color: #f4f4f4;
 }
 
 nav a {
-  color: #f3f3f3;
+  color: #f4f4f4;
   text-decoration: none;
 }
 
@@ -158,7 +160,7 @@ main .hero .hero-text {
 }
 
 main .hero .hero-text span {
-  color: #f3f3f3;
+  color: #f4f4f4;
   text-transform: uppercase;
 }
 
@@ -174,7 +176,6 @@ main .welcome {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/public/assets/images/fire-tools-very-light.png);
   background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
@@ -239,7 +240,7 @@ main .notifications .notification-wrapper {
   padding: 0.5rem;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 38, 255, 0.16);
           box-shadow: 0 4px 8px 0 rgba(0, 38, 255, 0.16);
-  background-color: rgba(0, 0, 0, 0.027);
+  background-color: #f4f4f4;
   border-radius: 5px;
   -webkit-animation: boxShadow 1.5s ease-out;
           animation: boxShadow 1.5s ease-out;
@@ -276,7 +277,6 @@ main .news {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/public/assets/images/fire-tools-very-light.png);
   background-size: contain;
   padding-top: 1rem;
   margin-top: -1rem;
@@ -355,7 +355,7 @@ main .news .news-wrapper .post-wrapper .post-button-wrapper .post-button {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: #f02127;
-  color: #f3f3f3;
+  color: #f4f4f4;
   font-size: 1.2rem;
   text-transform: uppercase;
   border-radius: 0.2rem;
@@ -372,7 +372,7 @@ main .news .news-wrapper .post-archive-button {
   display: inline-block;
   padding: 0.5rem 2.5rem;
   background-color: #f02127;
-  color: #f3f3f3;
+  color: #f4f4f4;
   font-size: 1.4rem;
   text-transform: uppercase;
   text-align: center;
@@ -398,7 +398,6 @@ main .vehicles {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/public/assets/images/fire-truck-very-light.png);
   background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
@@ -450,7 +449,6 @@ main .calendar {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 2rem;
-  background-image: url(/public/assets/images/house-very-very-light.png);
   background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
@@ -468,7 +466,7 @@ main .calendar .calendar-wrapper {
 
 main .calendar .calendar-wrapper .fc-button {
   background-color: #f02127;
-  color: #f3f3f3;
+  color: #f4f4f4;
   border: none;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -545,7 +543,7 @@ footer .footer-wrapper .middle i {
 footer .footer-wrapper .right-side .back-to-top {
   padding: 1rem 1.2rem;
   background-color: #f02127;
-  color: #f3f3f3;
+  color: #f4f4f4;
   font-size: 1.5rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;

@@ -6,7 +6,10 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(240, 33, 39, 0.053658963585434205) 100%);
+  background-color: $backgroundColor;
+  background-image: url(/public/assets/images/fire-tools-very-very-light.png);
+  background-size: contain;
+  //background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(240, 33, 39, 0.053658963585434205) 100%);
 }
 
 * {
@@ -137,7 +140,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(/public/assets/images/fire-tools-very-light.png);
+    //background-image: url(/public/assets/images/fire-tools-very-light.png);
     background-size: cover;
 
     //scroll-to anchor offset from top
@@ -190,7 +193,8 @@ main {
       align-items: center;
       padding: 0.5rem;
       box-shadow: 0 4px 8px 0 rgba(0, 38, 255, 0.16);
-      background-color: rgba(0, 0, 0, 0.027);
+      //background-color: rgba(0, 0, 0, 0.027);
+      background-color: $backgroundColor;
       border-radius: 5px;
 
       animation: boxShadow 1.5s ease-out;
@@ -220,7 +224,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(/public/assets/images/fire-tools-very-light.png);
+    //background-image: url(/public/assets/images/fire-tools-very-light.png);
     background-size: contain;
 
     //scroll-to anchor offset from top
@@ -318,7 +322,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(/public/assets/images/fire-truck-very-light.png);
+    //background-image: url(/public/assets/images/fire-truck-very-light.png);
     background-size: cover;
 
     //scroll-to anchor offset from top
@@ -366,7 +370,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
-    background-image: url(/public/assets/images/house-very-very-light.png);
+    //background-image: url(/public/assets/images/house-very-very-light.png);
     background-size: cover;
 
     //scroll-to anchor offset from top

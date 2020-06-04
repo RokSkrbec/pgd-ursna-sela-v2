@@ -2,7 +2,7 @@
 html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
-  background-color: #f3f3f3;
+  background-color: #f4f4f4;
 }
 
 * {
@@ -23,7 +23,7 @@ nav {
   padding: 2rem 2rem;
   position: fixed;
   top: 0;
-  background-color: #f3f3f3;
+  background-color: #f4f4f4;
 }
 
 nav h1 {
@@ -71,7 +71,7 @@ main form input {
 }
 
 main form a {
-  color: #f3f3f3;
+  color: #f4f4f4;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
 }
@@ -106,7 +106,7 @@ main form .counter-wrapper {
 
 main form button {
   background-color: #36393f;
-  color: #f3f3f3;
+  color: #f4f4f4;
   border: none;
   padding: 0.5rem 0;
   margin: 0.5rem 0;
