@@ -6,7 +6,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background-color: $backgroundColor;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(240, 33, 39, 0.053658963585434205) 100%);
 }
 
 * {
@@ -81,7 +81,7 @@ nav {
     }
 
     li:hover {
-      background-color: lighten($terciaryColor, 8);
+      background-color: darken($terciaryColor, 15);
     }
   }
 }
@@ -92,10 +92,11 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
+
   .hero {
     width: 100%;
     height: 100vh;
-    background-image: url(/public/assets/images/hero-image-2.png);
+    background-image: url(/public/assets/images/hero-image-2.jpg);
     background-size: cover;
     .action-arrow {
       position: absolute;
@@ -136,6 +137,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(/public/assets/images/fire-tools-very-light.png);
+    background-size: cover;
 
     //scroll-to anchor offset from top
     padding-top: 1rem;
@@ -217,6 +220,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(/public/assets/images/fire-tools-very-light.png);
+    background-size: contain;
 
     //scroll-to anchor offset from top
     padding-top: 1rem;
@@ -237,10 +242,10 @@ main {
       .post-wrapper {
         display: flex;
         flex-direction: column;
-        background-color: rgb(235, 235, 235);
+        //background-color: rgba(0, 0, 0, 0.04);
         padding: 0.5rem;
         border-radius: 0.3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         .post-date {
           font-size: 1.2rem;
           color: lighten($secondaryColor, 30);
@@ -280,12 +285,11 @@ main {
             text-transform: uppercase;
             border-radius: 0.2rem;
             cursor: pointer;
-            transition: all 1s ease;
+            transition: all 0.5s ease;
           }
 
           .post-button:hover {
-            background-color: $backgroundColor;
-            color: $terciaryColor;
+            background-color: darken($terciaryColor, 15);
           }
         }
       }
@@ -301,12 +305,11 @@ main {
         margin-top: 0.5rem;
         border-radius: 0.2rem;
         cursor: pointer;
-        transition: all 1s ease;
+        transition: all 0.5s ease;
       }
 
       .post-archive-button:hover {
-        background-color: $backgroundColor;
-        color: $terciaryColor;
+        background-color: darken($terciaryColor, 15);
       }
     }
   }
@@ -315,6 +318,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(/public/assets/images/fire-truck-very-light.png);
+    background-size: cover;
 
     //scroll-to anchor offset from top
     padding-top: 1rem;
@@ -336,7 +341,7 @@ main {
       width: 90%;
 
       .vehicle-wrapper {
-        background-color: rgb(235, 235, 235);
+        //background-color: rgb(235, 235, 235);
         padding: 0.5rem;
         border-radius: 0.3rem;
 
@@ -361,6 +366,8 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
+    background-image: url(/public/assets/images/house-very-very-light.png);
+    background-size: cover;
 
     //scroll-to anchor offset from top
     padding-top: 1rem;
@@ -374,19 +381,35 @@ main {
 
     .calendar-wrapper {
       width: 90%;
-      position: relative;
-      padding-bottom: 75%;
-      height: 0;
-      overflow: hidden;
-      z-index: -1;
+      .fc-button {
+        background-color: $terciaryColor;
+        color: $backgroundColor;
+        border: none;
 
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+        transition: all 0.5s ease;
+      }
+
+      .fc-button:hover {
+        background-color: darken($terciaryColor, 15);
+      }
+
+      .fc-button-active {
+        background-color: darken($terciaryColor, 15);
+      }
+
+      .fc-today {
+        background-color: lighten($terciaryColor, 32);
+      }
+
+      .fc th,
+      .fc td {
+        border-color: rgb(184, 174, 174);
+      }
+
+      .fc-event {
+        background-color: darken($terciaryColor, 15);
+        border: 1px solid darken($terciaryColor, 15);
+        border-radius: 0px;
       }
     }
   }
@@ -417,7 +440,7 @@ footer {
       }
     }
 
-    .right-side {
+    .middle {
       font-family: 'Roboto', sans-serif;
       font-size: 1.1rem;
       font-weight: bold;
@@ -425,6 +448,154 @@ footer {
       i {
         color: $terciaryColor;
       }
+    }
+
+    .right-side {
+      .back-to-top {
+        padding: 1rem 1.2rem;
+        background-color: $terciaryColor;
+        color: $backgroundColor;
+        font-size: 1.5rem;
+        transition: all 1s ease;
+        border-radius: 0.2rem;
+      }
+
+      .back-to-top:hover {
+        background-color: darken($terciaryColor, 15);
+      }
+    }
+  }
+}
+
+@media all and(min-width: 800px) {
+  main {
+    .welcome {
+      .welcome-text,
+      .welcome-image {
+        width: 70%;
+      }
+    }
+    .notifications {
+      .notification-wrapper {
+        width: 70%;
+      }
+    }
+    .news {
+      .news-wrapper {
+        width: 70%;
+      }
+    }
+    .vehicles {
+      .vehicles-description,
+      .vehicles-wrapper {
+        width: 70%;
+      }
+    }
+
+    .calendar {
+      .calendar-wrapper {
+        width: 70%;
+      }
+    }
+  }
+  footer {
+    .footer-wrapper {
+      width: 70%;
+    }
+  }
+}
+
+@media all and(min-width: 1024px) {
+  header {
+    top: 5rem;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    height: 5rem;
+
+    ul {
+      width: 50%;
+      margin: auto;
+      li {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  main {
+    .welcome {
+      .welcome-text,
+      .welcome-image {
+        width: 60%;
+      }
+    }
+    .notifications {
+      .notification-wrapper {
+        width: 60%;
+      }
+    }
+    .news {
+      .news-wrapper {
+        width: 60%;
+      }
+    }
+    .vehicles {
+      .vehicles-description,
+      .vehicles-wrapper {
+        width: 60%;
+      }
+    }
+
+    .calendar {
+      .calendar-wrapper {
+        width: 60%;
+      }
+    }
+  }
+  footer {
+    margin-bottom: 0;
+
+    .footer-wrapper {
+      width: 60%;
+    }
+  }
+}
+
+@media all and(min-width: 1500px) {
+  main {
+    .welcome {
+      .welcome-text,
+      .welcome-image {
+        width: 50%;
+      }
+    }
+    .notifications {
+      .notification-wrapper {
+        width: 50%;
+      }
+    }
+    .news {
+      .news-wrapper {
+        width: 50%;
+      }
+    }
+    .vehicles {
+      .vehicles-description,
+      .vehicles-wrapper {
+        width: 50%;
+      }
+    }
+
+    .calendar {
+      .calendar-wrapper {
+        width: 50%;
+      }
+    }
+  }
+  footer {
+    .footer-wrapper {
+      width: 50%;
     }
   }
 }

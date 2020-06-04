@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/public/assets/css/style.css" />
+
     <script src="/public/assets/js/main.js" defer></script>
+
+    <link href="/public/assets/fullcalendar/core/main.css" rel="stylesheet" />
+    <link href="/public/assets/fullcalendar/daygrid/main.css" rel="stylesheet" />
+    <link href="/public/assets/fullcalendar/timegrid/main.css" rel="stylesheet" />
+    <link href="/public/assets/fullcalendar/list/main.css" rel="stylesheet" />
+    <script src="/public/assets/fullcalendar/core/main.js"></script>
+    <script src="/public/assets/fullcalendar/interaction/main.js"></script>
+    <script src="/public/assets/fullcalendar/daygrid/main.js"></script>
+    <script src="/public/assets/fullcalendar/timegrid/main.js"></script>
+    <script src="/public/assets/fullcalendar/list/main.js"></script>
+    <script src="/public/assets/fullcalendar/google-calendar/main.js"></script>
+    <script src="/public/assets/fullcalendar/core/locales/sl.js"></script>
+
     <title>PGD Uršna sela</title>
   </head>
   <body>
@@ -98,14 +112,8 @@
       <section class="calendar" id="calendar-anchor">
         <div class="calendar-title">DVORANA</div>
         <div class="calendar-wrapper">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23f3f3f3&amp;ctz=Europe%2FBelgrade&amp;src=MG1nY2sycGlzdG1hYzBkNjkwbmRpcDIxa2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;hl=sl"
-            style="border-width: 0;"
-            width="800"
-            height="600"
-            frameborder="0"
-            scrolling="no"
-          ></iframe>
+          <div id="loading">loading...</div>
+          <div id="calendar"></div>
         </div>
       </section>
     </main>
@@ -114,10 +122,15 @@
         <div class="left-side">
           <div class="logo"><img src="../public/assets/images/logo.png" alt="" /></div>
         </div>
-        <div class="right-side">
+        <div class="middle">
           <i class="fas fa-map-marker-alt"></i> Gasilska pot 5, <br />
           8323 Uršna sela <br />
           <i class="fas fa-phone"></i> 051-330-914
+        </div>
+        <div class="right-side">
+          <a href="#"
+            ><div class="back-to-top"><i class="fas fa-arrow-up"></i></div
+          ></a>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background-color: #f3f3f3;
+  background: radial-gradient(circle, white 0%, rgba(240, 33, 39, 0.053659) 100%);
 }
 
 * {
@@ -104,7 +104,7 @@ nav ul li i {
 }
 
 nav ul li:hover {
-  background-color: #f3474c;
+  background-color: #b80c11;
 }
 
 main {
@@ -120,7 +120,7 @@ main {
 main .hero {
   width: 100%;
   height: 100vh;
-  background-image: url(/public/assets/images/hero-image-2.png);
+  background-image: url(/public/assets/images/hero-image-2.jpg);
   background-size: cover;
 }
 
@@ -174,6 +174,8 @@ main .welcome {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url(/public/assets/images/fire-tools-very-light.png);
+  background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
 }
@@ -274,6 +276,8 @@ main .news {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url(/public/assets/images/fire-tools-very-light.png);
+  background-size: contain;
   padding-top: 1rem;
   margin-top: -1rem;
 }
@@ -306,10 +310,9 @@ main .news .news-wrapper .post-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #ebebeb;
   padding: 0.5rem;
   border-radius: 0.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 main .news .news-wrapper .post-wrapper .post-date {
@@ -357,13 +360,12 @@ main .news .news-wrapper .post-wrapper .post-button-wrapper .post-button {
   text-transform: uppercase;
   border-radius: 0.2rem;
   cursor: pointer;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 main .news .news-wrapper .post-wrapper .post-button-wrapper .post-button:hover {
-  background-color: #f3f3f3;
-  color: #f02127;
+  background-color: #b80c11;
 }
 
 main .news .news-wrapper .post-archive-button {
@@ -377,13 +379,12 @@ main .news .news-wrapper .post-archive-button {
   margin-top: 0.5rem;
   border-radius: 0.2rem;
   cursor: pointer;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 main .news .news-wrapper .post-archive-button:hover {
-  background-color: #f3f3f3;
-  color: #f02127;
+  background-color: #b80c11;
 }
 
 main .vehicles {
@@ -397,6 +398,8 @@ main .vehicles {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url(/public/assets/images/fire-truck-very-light.png);
+  background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
 }
@@ -418,7 +421,6 @@ main .vehicles .vehicles-wrapper {
 }
 
 main .vehicles .vehicles-wrapper .vehicle-wrapper {
-  background-color: #ebebeb;
   padding: 0.5rem;
   border-radius: 0.3rem;
 }
@@ -448,6 +450,8 @@ main .calendar {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 2rem;
+  background-image: url(/public/assets/images/house-very-very-light.png);
+  background-size: cover;
   padding-top: 1rem;
   margin-top: -1rem;
 }
@@ -460,20 +464,37 @@ main .calendar .calendar-title {
 
 main .calendar .calendar-wrapper {
   width: 90%;
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
 }
 
-main .calendar .calendar-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+main .calendar .calendar-wrapper .fc-button {
+  background-color: #f02127;
+  color: #f3f3f3;
+  border: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main .calendar .calendar-wrapper .fc-button:hover {
+  background-color: #b80c11;
+}
+
+main .calendar .calendar-wrapper .fc-button-active {
+  background-color: #b80c11;
+}
+
+main .calendar .calendar-wrapper .fc-today {
+  background-color: #fababc;
+}
+
+main .calendar .calendar-wrapper .fc th,
+main .calendar .calendar-wrapper .fc td {
+  border-color: #b8aeae;
+}
+
+main .calendar .calendar-wrapper .fc-event {
+  background-color: #b80c11;
+  border: 1px solid #b80c11;
+  border-radius: 0px;
 }
 
 footer {
@@ -511,14 +532,115 @@ footer .footer-wrapper .left-side .logo img {
   max-width: 100%;
 }
 
-footer .footer-wrapper .right-side {
+footer .footer-wrapper .middle {
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-footer .footer-wrapper .right-side i {
+footer .footer-wrapper .middle i {
   color: #f02127;
+}
+
+footer .footer-wrapper .right-side .back-to-top {
+  padding: 1rem 1.2rem;
+  background-color: #f02127;
+  color: #f3f3f3;
+  font-size: 1.5rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 0.2rem;
+}
+
+footer .footer-wrapper .right-side .back-to-top:hover {
+  background-color: #b80c11;
+}
+
+@media all and (min-width: 800px) {
+  main .welcome .welcome-text,
+  main .welcome .welcome-image {
+    width: 70%;
+  }
+  main .notifications .notification-wrapper {
+    width: 70%;
+  }
+  main .news .news-wrapper {
+    width: 70%;
+  }
+  main .vehicles .vehicles-description,
+  main .vehicles .vehicles-wrapper {
+    width: 70%;
+  }
+  main .calendar .calendar-wrapper {
+    width: 70%;
+  }
+  footer .footer-wrapper {
+    width: 70%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  header {
+    top: 5rem;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    height: 5rem;
+  }
+  nav ul {
+    width: 50%;
+    margin: auto;
+  }
+  nav ul li {
+    font-size: 1.5rem;
+  }
+  main .welcome .welcome-text,
+  main .welcome .welcome-image {
+    width: 60%;
+  }
+  main .notifications .notification-wrapper {
+    width: 60%;
+  }
+  main .news .news-wrapper {
+    width: 60%;
+  }
+  main .vehicles .vehicles-description,
+  main .vehicles .vehicles-wrapper {
+    width: 60%;
+  }
+  main .calendar .calendar-wrapper {
+    width: 60%;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+  footer .footer-wrapper {
+    width: 60%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  main .welcome .welcome-text,
+  main .welcome .welcome-image {
+    width: 50%;
+  }
+  main .notifications .notification-wrapper {
+    width: 50%;
+  }
+  main .news .news-wrapper {
+    width: 50%;
+  }
+  main .vehicles .vehicles-description,
+  main .vehicles .vehicles-wrapper {
+    width: 50%;
+  }
+  main .calendar .calendar-wrapper {
+    width: 50%;
+  }
+  footer .footer-wrapper {
+    width: 50%;
+  }
 }
 
 @-webkit-keyframes opacityPulse {
